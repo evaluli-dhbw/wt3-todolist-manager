@@ -2,9 +2,9 @@
   "name": "wt3-todolist-manager",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node node_modules/nodemon/bin/nodemon.js index.js",
+    "start": "node node_modules/nodemon/bin/nodemon.js server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
