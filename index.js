@@ -8,13 +8,16 @@ mongoose.connect('mongodb://localhost/todolist-manager');
 // create a app
 const app = express();
 
+// static files (=client code) are in the client directory
+app.use(express.static(__dirname + '/client'));
+
 // define the routes
 app.get('/', function(req, res) {
-  res.send('hallo');
+  res.sendFile('index.html');
 });
 
 app.get('/api', function(req, res) {
-  res.send('api');
+  res.send('server');
 });
 
 // create server
