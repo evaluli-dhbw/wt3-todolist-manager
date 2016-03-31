@@ -1,3 +1,4 @@
+const TodoList = require('./models/TodoList');
 
 const router = function(app) {
 	app.get('/', function(req, res) {
@@ -16,12 +17,25 @@ const router = function(app) {
 		res.send('sign in');
 	});
 
-	app.get('/api/todolists', function(req, res) {
-		res.send('display all todolists of the logged in user');
+	app.get('/api/todolists', function(req, res, next) {
+		TodoList.find(function(err, todolists) {
+			if (err) { return next(err); }
+			res.json({
+				success: true,
+				data: todolists
+			});
+		});
 	});
 
 	app.post('/api/todolists', function(req, res) {
-		res.send('create todo list');
+		const newList = new TodoList({
+			name: 'Haushalt Liste'
+		});
+
+		newList.save(function(err, saveList) {
+			if (err) { return next(err); }
+			res.json(saveList);
+		});
 	});
 
 
