@@ -19,6 +19,7 @@
   "homepage": "https://github.com/evaluli-dhbw/wt3-todolist-manager#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "mongoose": "^4.4.10",
     "nodemon": "^1.9.1"
   }
 }

@@ -1,6 +1,9 @@
 // import express
 const express = require('express');
 const http = require('http');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/todolist-manager');
 
 // create a app
 const app = express();
